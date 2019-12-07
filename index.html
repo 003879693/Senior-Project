@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ventilator Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div style="width:50%;"></div>
+    <div class="container">
+        <canvas id="myChart" style="display: block; width: 815px; height: 407px;" width="400" height="400"></canvas>
+    </div>
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+
+        let heartrate = new Chart(myChart, {
+            type: 'line',
+            data: {
+                labels: ['0', '2', '4', '6', '8', '10', '12'],
+                datasets: [{
+                    label: 'pCirc',
+                    data: [6, 15, 15, 15, 5, 15, 15, 15, 6],
+                    borderColor: 'green',
+                    fill: false
+                }]
+
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        stacked: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'cmH20'
+                        }
+                    }],
+                    xAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <div style="width:50%;"></div>
+    <div class="container">
+        <canvas id="chart" style="display: block; width: 815px; height: 407px;" width="400" height="400"></canvas>
+    </div>
+    <script>
+        let chart = document.getElementById('chart').getContext('2d');
+
+        let heart = new Chart(chart, {
+            type: 'line',
+            data: {
+                labels: ['0', '2', '4', '6', '8', '10', '12'],
+                datasets: [{
+                    label: 'INSP',
+                    data: [-20, 40, 1, -1, 1, 0, -45, 0, 40],
+                    borderColor: 'yellow',
+                    fill: false
+                }]
+
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        stacked: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'L/min'
+                        }
+                    }],
+                    xAxes: [{
+                        stacked: true
+                    }]
+                }
+            }
+        });
+    </script>
+
+
+</body>
+</html>

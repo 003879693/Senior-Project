@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  body
+  
+
+    main
+      block header
+        header.header
+          h1 #{title}
+      block content
